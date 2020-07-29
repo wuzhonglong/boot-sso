@@ -2,6 +2,7 @@ package com.wzl.bootsso.controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
@@ -15,7 +16,9 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping(value = "/shiro")
 public class ShiroLoginController {
     @GetMapping("/login")
-    public void login(){
-
+    public void login(@RequestParam String username, @RequestParam String password) {
+        // 用户名查询数据库 是否存在
+        // 存在 验证密码
+        // 通过 生成token
     }
 }

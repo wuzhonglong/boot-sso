@@ -29,13 +29,40 @@ public class JwtRealm extends AuthorizingRealm {
         return token instanceof JwtToken;
     }
 
+    /**
+     * @param principalCollection
+     * @return org.apache.shiro.authz.AuthorizationInfo
+     * @description 权限认证
+     * @author W.sir
+     * @date 2020-07-28 10:41
+     **/
     @Override
     protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection principalCollection) {
         return null;
     }
 
+    /**
+     * @param auth
+     * @return org.apache.shiro.authc.AuthenticationInfo
+     * @description 登陆鉴权
+     * @author W.sir
+     * @date 2020-07-28 10:41
+     **/
     @Override
-    protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken authenticationToken) throws AuthenticationException {
+    protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken auth) throws AuthenticationException {
+        // 我们已经重写了JwtToken的getCredentials方法 返回的就是字符串
+        @SuppressWarnings("unchecked")
+        String token = (String) auth.getCredentials();
+        if (token == null) {
+            throw new AuthenticationException("token 为空");
+        }
+        // 检查token是否有效
+
         return null;
     }
+
+    public void checkTokenIsEffective(String token) {
+        // 将token解密
+    }
+
 }

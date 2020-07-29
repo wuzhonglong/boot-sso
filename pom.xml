@@ -50,6 +50,18 @@
             <artifactId>shiro-spring</artifactId>
             <version>${shrio.spring.version}</version>
         </dependency>
+        <!--shiro-redis开源插件 自定义缓存时使用-->
+        <dependency>
+            <groupId>org.crazycake</groupId>
+            <artifactId>shiro-redis</artifactId>
+            <version>3.1.0</version>
+        </dependency>
+        <!--使用签名算法的时候需要-->
+        <dependency>
+            <groupId>io.jsonwebtoken</groupId>
+            <artifactId>jjwt</artifactId>
+            <version>0.9.1</version>
+        </dependency>
 
 
 
