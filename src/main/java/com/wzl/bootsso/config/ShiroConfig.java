@@ -1,5 +1,6 @@
 package com.wzl.bootsso.config;
 
+import com.wzl.bootsso.filter.JwtFilter;
 import com.wzl.bootsso.properties.RedisConfigProperties;
 import com.wzl.bootsso.realms.JwtRealm;
 import com.wzl.bootsso.utils.JwtUtil;
@@ -60,15 +61,17 @@ public class ShiroConfig {
         // 添加过滤器 一个url可以配置多个过滤器 只有全部验证通过 才会视为通过
         // TODO 可以尝试设置两个 然后看看效果
         Map<String, Filter> filterMap = new HashMap<>();
-
+        filterMap.put("jwt", new JwtFilter());
         factory.setFilters(filterMap);
+
+        filterChainDefinitionMap.put("/**", "jwt");
         factory.setFilterChainDefinitionMap(filterChainDefinitionMap);
         // 检测到未登陆时需要跳转的页面
         factory.setLoginUrl("/shiro/login");
         // 未授权界面
-        factory.setUnauthorizedUrl("");
+        factory.setUnauthorizedUrl("/shiro/401");
         // 登陆成功跳转的页面  可以不在这儿实现 登陆代码里面也可以直接实现跳转功能
-        factory.setSuccessUrl("");
+        //factory.setSuccessUrl("/shiro/index");
         return factory;
     }
 

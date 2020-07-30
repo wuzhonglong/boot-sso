@@ -21,4 +21,9 @@ public class ShiroLoginController {
         // 存在 验证密码
         // 通过 生成token
     }
+
+    @GetMapping("/401")
+    public void unauthorized(){
+        System.out.println("未授权");
+    }
 }
