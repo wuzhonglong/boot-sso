@@ -65,5 +65,6 @@ public class JwtFilter extends BasicHttpAuthenticationFilter {
         // 由于验证的时候 如果出错 会直接抛异常 就不管了 通过了就会执行下面的代码
         System.out.println("验证通过,刷新token缓存时间");
         return true;
+
     }
 }

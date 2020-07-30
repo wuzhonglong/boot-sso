@@ -57,6 +57,7 @@ public class ShiroConfig {
         // TODO 为什么要区分Ajax登陆
         filterChainDefinitionMap.put("/shiro/login", "anon");
         filterChainDefinitionMap.put("/shiro/ajaxLogin", "anon");
+        filterChainDefinitionMap.put("/shiro/registry", "anon");// 测试url
         // 这里还可以通过配置文件配置 不被拦截的路径 具体可以参考wlyypt-sms-properties
         // 添加过滤器 一个url可以配置多个过滤器 只有全部验证通过 才会视为通过
         // TODO 可以尝试设置两个 然后看看效果
