@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 public class GlobalExceptionHandler {
     @ExceptionHandler(value = Exception.class)
     public CommonResult<?> exceptionHandl(Exception e) {
+        e.printStackTrace();
         return CommonResult.fail().msg(e.getMessage());
     }
 }

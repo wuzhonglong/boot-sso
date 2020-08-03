@@ -1,0 +1,8 @@
+server:
+  port: 8989
+  servlet:
+    context-path: /
+
+spring:
+  profiles:
+    active: @profile.active@ #此处由maven的环境选择决定

@@ -37,6 +37,7 @@ public class ShiroLoginController {
             if (CollectionUtils.isEmpty(userList)) {
                 log.info("用户不存在");
             }
+
             if (userList.get(0).getState() == 1) {
                 log.info("登陆失败，该用户已锁定");
             }
