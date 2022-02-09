@@ -16,7 +16,7 @@
 
     <properties>
         <java.version>1.8</java.version>
-        <shrio.spring.version>1.4.0</shrio.spring.version>
+        <shrio.spring.version>1.7.1</shrio.spring.version>
         <mybatis-plus.version>3.3.2</mybatis-plus.version>
     </properties>
 
